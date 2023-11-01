@@ -4,6 +4,11 @@ What is mean by argoCD?
  clusters. its provides a user-friendly interface for managing the deployment and configuration of application is a k8s environment,helping to streamline 
 
 the process of delivering and updating containerized applications.
+
+
+--->configaration can written either as a helm charts ,kustomize files ,jsonnet plain yml files.
+
+---> gives nice vissuals of deployed pods and applications on kubernetes.
  
 
 Key features of ArgoCd 
@@ -18,6 +23,14 @@ Key features of ArgoCd
      ---> ArgoCD Follows the gitops methodology , which means that application definitions and configurations are stored in git repository.
   
      ---> The git repository servers as the sources of truth for application definitions,and ArgoCD automatically sync the cluster state to match the state defined in the git repository.
+
+--------
+
+----> Gitops is based off a git-based sources code management system and hence github,gitlab,bitbucket and natural choices.
+
+----> Gitops combines git with kubernetes that serves for developing and delivering kubernetes-based applications.
+
+
 
 3) multi-Environments:
 
@@ -90,11 +103,6 @@ Key features of ArgoCd
 
 
    10) Its come in web application then it will be success it application.
-
-
-
-
-
 
 
 
