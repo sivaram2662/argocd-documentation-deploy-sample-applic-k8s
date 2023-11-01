@@ -73,6 +73,31 @@ Key features of ArgoCd
 
      7) After to see the sync app ---down side to application name select --after sync and to check in cluster argocd one pod is created .
 
+    
+
+    8) Onces sync is completed after to see the pods is running or not check it onces it
+      
+                      kubenct get pods -n <namespace name>
+                
+                      kubectl get deploy -n <namespace name>
+                   
+    9) In cluster once check it svc is comming or not check it 
+ 
+
+                       kubectl get svc -n  <namespace name>
+
+    in svc to mention thet type is LoadBalancer to copy the endpoint search it in google .
+
+
+   10) Its come in web application then it will be success it application.
+
+
+
+
+
+
+
+
     passwd argocd: lnj6sG9ywZ8zZABV
 
 
