@@ -1,0 +1,122 @@
+What is mean by argoCD?
+    Argocd is an open-source-declarative, Gitops continuous delivery tool that is used for managing, deploying and synchronizing application in kubernetes
+
+ clusters. its provides a user-friendly interface for managing the deployment and configuration of application is a k8s environment,helping to streamline 
+
+the process of delivering and updating containerized applications.
+ 
+
+Key features of ArgoCd 
+======================
+1) Declarative Configuration:
+      ---> Argocd allows you to define your application configuration in a declarative manner. 
+       
+      ---> you specify how your applications should look in a desire state and Argocd ensures that the actual state matches the desired state.
+
+2) GitOps:
+
+     ---> ArgoCD Follows the gitops methodology , which means that application definitions and configurations are stored in git repository.
+  
+     ---> The git repository servers as the sources of truth for application definitions,and ArgoCD automatically sync the cluster state to match the state defined in the git repository.
+
+3) multi-Environments:
+
+     ---> ArgoCD is suitable for managing application across multiple Environments(e.g development,staging,production)
+
+4) ROllbacks:
+
+    ---> In the event of a problematic deployment or undesired changes , ArgoCD supports rollback to previous know good states defined in the git repository.
+
+5) Integration:
+   
+    ---> ArgoCd can integrate with various authentication systems , container registries, and obeservability tools to provide a comprehensive application deploment and management solution.
+
+
+6) web UI and CLI : 
+
+   ---> ArgoCD offers both a web-based user interface and a command-line interface (CLI) for interacting with and managing applications.
+
+7) Customization:
+ 
+   ---> it allows for the customization of application lifecycles and hooks to tailor deployments processes to specific requirements.
+
+
+
+
+1)To create a cluster after will deploy to the argocd 
+
+2) ArgoCd instalation process
+
+    1) first we have create namespace --argocd 
+         k create ns argocd 
+
+    2) after we deploy to the manifest file in cluster.
+     
+         kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+    3) after we have check to pods and svc will check it oneces
+        k get pods -n argocd
+        k get svc -n argocd 
+
+        after then it will be expose the argocd in svc network is insert the LoadBalancer. then it will be expose the url.
+
+
+     4)  it will be asking to the argocd username and passwd
+     
+        username: admin
+        passswd to enter the terminal : kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d  
+           ---- to get passwd and it will be login argocd.
+
+     5) In argocd ui page to click to the setting and select the Repositories inside to add the git url add and save .
+
+     6) argocd page to select to the application ---click to the new app ---enter the application name --- project name to select to the default ---sync policy manual ----source to select repositories url ---path deployment path   ----- cluster url select automatically add url --- namespace --to insert name and it will be select the create.
+
+     7) After to see the sync app ---down side to application name select --after sync and to check in cluster argocd one pod is created .
+
+    passwd argocd: lnj6sG9ywZ8zZABV
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+
+
+
+    4) to write the ingress yml file and we add the selector name in ingrss yml and namespace after it will be deploy that ingress yml .
+
+         in ingress yml to add the domain name in route53 record set after it will be expose that 
+
+    it will be asking to the argocd username and passwd
+     
+        username: admin
+        passswd to enter the terminal : kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d  
+           ---- to get passwd and it will be login argocd.
+
+    5) To write a sample Docker file and build images and run the container and then it willbe images send to the ecr.
+
+    6) after get the image url insert to the Deployment.yml and svc and ingress file in namespace argocd.
+
+    7) then it will be see the pods and application to see argocd website.
+
+
+
+
+
+
+    
